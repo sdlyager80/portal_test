@@ -1,107 +1,197 @@
-import React, { useState, useEffect } from 'react';
+/**
+ * FSO Insurance Portal — Smart Studio Workspace
+ *
+ * ServiceNow SDK constraints observed here:
+ *   • No CSS modules; only a minimal app.css reset + MUI sx props
+ *   • No React Router; navigation is state-driven
+ *   • window.g_ck is the ServiceNow CSRF token (used by InsuranceService)
+ *   • No Vite / webpack — built by now-sdk
+ */
+import React, { useState, useMemo } from 'react';
 import './App.css';
+import {
+    AppBar,
+    Box,
+    CssBaseline,
+    Drawer,
+    IconButton,
+    List,
+    ListItemButton,
+    ListItemIcon,
+    ListItemText,
+    ThemeProvider,
+    Toolbar,
+    Tooltip,
+    Typography,
+    createTheme,
+} from '@mui/material';
+import {
+    Dashboard as DashboardIcon,
+    Menu as MenuIcon,
+    Payment as PaymentIcon,
+    Policy as PolicyIcon,
+} from '@mui/icons-material';
 
+import Dashboard        from './components/Dashboard.jsx';
+import PolicyServicing  from './components/PolicyServicing.jsx';
+import BillingManagement from './components/BillingManagement.jsx';
+import { InsuranceService } from './services/InsuranceService.js';
+
+// ── Theme ──────────────────────────────────────────────────────────────────────
+const theme = createTheme({
+    palette: {
+        primary:    { main: '#1B1F3A', contrastText: '#ffffff' },
+        secondary:  { main: '#00AEEF', contrastText: '#ffffff' },
+        background: { default: '#f4f5f7', paper: '#ffffff' },
+    },
+    shape: { borderRadius: 8 },
+    typography: {
+        h5: { fontWeight: 600 },
+        h6: { fontWeight: 600 },
+    },
+    components: {
+        MuiAppBar: {
+            defaultProps: { elevation: 0 },
+            styleOverrides: {
+                root: { borderBottom: '1px solid rgba(255,255,255,0.15)' },
+            },
+        },
+        MuiCard:  { defaultProps: { elevation: 0 }, styleOverrides: { root: { border: '1px solid #e0e0e0' } } },
+        MuiPaper: { defaultProps: { elevation: 0 } },
+        MuiTableHead: {
+            styleOverrides: {
+                root: {
+                    '& .MuiTableCell-head': {
+                        fontWeight: 600,
+                        backgroundColor: '#fafafa',
+                        borderBottom: '2px solid #e0e0e0',
+                    },
+                },
+            },
+        },
+    },
+});
+
+// ── Navigation config ──────────────────────────────────────────────────────────
+const NAV = [
+    { id: 'dashboard', label: 'Dashboard',       icon: <DashboardIcon /> },
+    { id: 'policy',    label: 'Policy Servicing', icon: <PolicyIcon /> },
+    { id: 'billing',   label: 'Billing & Payment', icon: <PaymentIcon /> },
+];
+
+const DRAWER_OPEN     = 240;
+const DRAWER_CLOSED   = 64;
+
+// ── App ────────────────────────────────────────────────────────────────────────
 export default function App() {
-    const [portalData, setPortalData] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        // Test our insurance API with fallback
-        fetch('/api/x_dxcis_smart_st_0/insurance_portal/data', {
-            headers: {
-                'Accept': 'application/json',
-                'X-UserToken': window.g_ck
-            }
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            setPortalData(data.result);
-            setLoading(false);
-        })
-        .catch(err => {
-            console.error('API Error:', err);
-            // Fallback data for demo purposes
-            setPortalData({
-                status: 'active',
-                message: 'Insurance Portal is ready (demo mode)',
-                timestamp: new Date().toLocaleString()
-            });
-            setLoading(false);
-        });
-    }, []);
-
-    if (loading) {
-        return (
-            <div className="portal-container">
-                <div className="loading">Loading FSO Insurance Portal...</div>
-            </div>
-        );
-    }
-
-    if (error) {
-        return (
-            <div className="portal-container">
-                <div className="error">
-                    <h2>Error Loading Portal</h2>
-                    <p>{error}</p>
-                </div>
-            </div>
-        );
-    }
+    const [view,  setView]  = useState('dashboard');
+    const [open,  setOpen]  = useState(true);
+    const service           = useMemo(() => new InsuranceService(), []);
+    const drawerWidth       = open ? DRAWER_OPEN : DRAWER_CLOSED;
 
     return (
-        <div className="portal-container">
-            <header className="portal-header">
-                <h1>🏢 FSO Insurance Portal</h1>
-                <p>Smart Studio Workspace</p>
-            </header>
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
 
-            <div className="portal-content">
-                <div className="welcome-card">
-                    <h2>Welcome to Your Insurance Portal</h2>
-                    <div className="status-info">
-                        <p><strong>Status:</strong> <span className="status-active">{portalData?.status}</span></p>
-                        <p><strong>Message:</strong> {portalData?.message}</p>
-                        <p><strong>Connected:</strong> {portalData?.timestamp}</p>
-                    </div>
-                </div>
+            <Box sx={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
 
-                <div className="portal-sections">
-                    <div className="section-card">
-                        <h3>🔐 Policy Management</h3>
-                        <p>View and manage your insurance policies</p>
-                        <button className="portal-button">Access Policies</button>
-                    </div>
+                {/* ── AppBar ── */}
+                <AppBar position="fixed" sx={{ zIndex: (t) => t.zIndex.drawer + 1 }}>
+                    <Toolbar>
+                        <IconButton
+                            color="inherit"
+                            edge="start"
+                            onClick={() => setOpen((v) => !v)}
+                            sx={{ mr: 2 }}
+                            aria-label="toggle navigation"
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Typography variant="h6" sx={{ flexGrow: 1, letterSpacing: 0.3 }}>
+                            Smart Studio Workspace
+                        </Typography>
+                        <Typography variant="body2" sx={{ opacity: 0.75 }}>
+                            FSO Insurance Portal
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
 
-                    <div className="section-card">
-                        <h3>💳 Claims $[AMP] Billing</h3>
-                        <p>File claims and manage billing information</p>
-                        <button className="portal-button">Manage Claims</button>
-                    </div>
+                {/* ── Left drawer ── */}
+                <Drawer
+                    variant="permanent"
+                    sx={{
+                        width: drawerWidth,
+                        flexShrink: 0,
+                        '& .MuiDrawer-paper': {
+                            width: drawerWidth,
+                            overflowX: 'hidden',
+                            mt: '64px',
+                            borderRight: '1px solid #e0e0e0',
+                            transition: (t) =>
+                                t.transitions.create('width', {
+                                    easing:   t.transitions.easing.sharp,
+                                    duration: open
+                                        ? t.transitions.duration.enteringScreen
+                                        : t.transitions.duration.leavingScreen,
+                                }),
+                        },
+                    }}
+                >
+                    <List sx={{ pt: 1 }} disablePadding>
+                        {NAV.map((item) => (
+                            <Tooltip key={item.id} title={open ? '' : item.label} placement="right">
+                                <ListItemButton
+                                    selected={view === item.id}
+                                    onClick={() => setView(item.id)}
+                                    sx={{
+                                        mx: 1, my: 0.5, borderRadius: 1.5,
+                                        minHeight: 44, px: 1.5,
+                                        '&.Mui-selected': {
+                                            bgcolor: 'primary.main',
+                                            color: 'primary.contrastText',
+                                            '&:hover': { bgcolor: 'primary.dark' },
+                                            '& .MuiListItemIcon-root': { color: 'inherit' },
+                                        },
+                                    }}
+                                >
+                                    <ListItemIcon sx={{ minWidth: 36 }}>
+                                        {item.icon}
+                                    </ListItemIcon>
+                                    {open && (
+                                        <ListItemText
+                                            primary={item.label}
+                                            primaryTypographyProps={{ variant: 'body2', fontWeight: 500 }}
+                                        />
+                                    )}
+                                </ListItemButton>
+                            </Tooltip>
+                        ))}
+                    </List>
+                </Drawer>
 
-                    <div className="section-card">
-                        <h3>📊 Dashboard</h3>
-                        <p>View your insurance dashboard and reports</p>
-                        <button className="portal-button">View Dashboard</button>
-                    </div>
+                {/* ── Main content ── */}
+                <Box
+                    component="main"
+                    sx={{
+                        flexGrow: 1,
+                        bgcolor: 'background.default',
+                        mt: '64px',
+                        p: 3,
+                        overflow: 'auto',
+                    }}
+                >
+                    {view === 'dashboard' && (
+                        <Dashboard service={service} onNavigate={setView} />
+                    )}
+                    {view === 'policy' && (
+                        <PolicyServicing service={service} />
+                    )}
+                    {view === 'billing' && (
+                        <BillingManagement service={service} />
+                    )}
+                </Box>
 
-                    <div className="section-card">
-                        <h3>🛠️ Service Requests</h3>
-                        <p>Submit and track service requests</p>
-                        <button className="portal-button">Service Center</button>
-                    </div>
-                </div>
-            </div>
-
-            <footer className="portal-footer">
-                <p>FSO Insurance Portal - Powered by ServiceNow</p>
-            </footer>
-        </div>
+            </Box>
+        </ThemeProvider>
     );
 }

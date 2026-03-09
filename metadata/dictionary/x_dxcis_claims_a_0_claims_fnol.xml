@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="3b5ec6c67822b610b4196c8fb1ecad68" extends="sn_bom_claim_base" label="Claims FNOL" max_length="40" name="x_dxcis_claims_a_0_claims_fnol" type="collection">
+        <element label="Signature Present" max_length="40" name="x_dxcis_smart_st_0_signature_present" type="string"/>
+    </element>
+</database>

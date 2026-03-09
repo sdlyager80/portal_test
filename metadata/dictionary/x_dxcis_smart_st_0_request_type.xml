@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="b3d717b278723a90b4196c8fb1ecadef" label="Request Type" max_length="40" name="x_dxcis_smart_st_0_request_type" type="collection">
+        <element label="Description" max_length="250" name="description" type="string"/>
+        <element label="Order" max_length="40" name="order" type="integer"/>
+        <element label="Name" max_length="50" name="name" type="string"/>
+        <element label="Label" max_length="50" name="label" type="string"/>
+        <element label="Active" max_length="40" name="active" type="boolean"/>
+    </element>
+</database>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_row">
+    <sp_row action="DELETE">
+        <class_name/>
+        <order>1</order>
+        <semantic_tag/>
+        <sp_column/>
+        <sp_container display_value="sw_home - Container 2">83dbc64a783eb290b4196c8fb1ecad71</sp_container>
+        <sys_class_name>sp_row</sys_class_name>
+        <sys_created_by>aniket.chaudhari</sys_created_by>
+        <sys_created_on>2026-02-05 09:42:56</sys_created_on>
+        <sys_id>60d35ab278baf690b4196c8fb1ecada1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="Smart Studio Workspace" source="x_dxcis_smart_st_0">3c24ed4a783ab290b4196c8fb1ecad43</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Smart Studio Workspace">3c24ed4a783ab290b4196c8fb1ecad43</sys_scope>
+        <sys_update_name>sp_row_60d35ab278baf690b4196c8fb1ecada1</sys_update_name>
+        <sys_updated_by>aniket.chaudhari</sys_updated_by>
+        <sys_updated_on>2026-02-05 09:42:56</sys_updated_on>
+    </sp_row>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Smart Studio Workspace">3c24ed4a783ab290b4196c8fb1ecad43</application>
+        <file_path/>
+        <instance_id>6158ecff2b0726d0323ef9f66e91bf08</instance_id>
+        <instance_name>nextgenbpmnp1</instance_name>
+        <name>sp_row_60d35ab278baf690b4196c8fb1ecada1</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_row"><sp_row action="INSERT_OR_UPDATE"><class_name/><order>1</order><semantic_tag/><sp_column/><sp_container display_value="sw_home - Container 2">83dbc64a783eb290b4196c8fb1ecad71</sp_container><sys_class_name>sp_row</sys_class_name><sys_created_by>aniket.chaudhari</sys_created_by><sys_created_on>2026-02-05 09:42:56</sys_created_on><sys_id>60d35ab278baf690b4196c8fb1ecada1</sys_id><sys_mod_count>0</sys_mod_count><sys_name>1</sys_name><sys_package display_value="Smart Studio Workspace" source="x_dxcis_smart_st_0">3c24ed4a783ab290b4196c8fb1ecad43</sys_package><sys_policy/><sys_scope display_value="Smart Studio Workspace">3c24ed4a783ab290b4196c8fb1ecad43</sys_scope><sys_update_name>sp_row_60d35ab278baf690b4196c8fb1ecada1</sys_update_name><sys_updated_by>aniket.chaudhari</sys_updated_by><sys_updated_on>2026-02-05 09:42:56</sys_updated_on></sp_row></record_update>]]></payload>
+        <payload_hash>-1895620238</payload_hash>
+        <record_name>1</record_name>
+        <reverted_from/>
+        <source>7824ed4a783ab290b4196c8fb1ecadd2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>aniket.chaudhari</sys_created_by>
+        <sys_created_on>2026-02-05 09:42:56</sys_created_on>
+        <sys_id>68d35ab278baf690b4196c8fb1ecada4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19c2d2eeef60000001</sys_recorded_at>
+        <sys_updated_by>aniket.chaudhari</sys_updated_by>
+        <sys_updated_on>2026-02-05 09:42:56</sys_updated_on>
+        <type>Row</type>
+        <update_guid>68d35ab246baf690b7a9c9c14d6c90a3</update_guid>
+        <update_guid_history>68d35ab246baf690b7a9c9c14d6c90a3:-1895620238</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="1">193492f278baf690b4196c8fb1ecad56</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>aniket.chaudhari</sys_created_by>
+        <sys_created_on>2026-02-05 09:44:37</sys_created_on>
+        <sys_db_object display_value="" name="sp_row">sp_row</sys_db_object>
+        <sys_id>4b53153212c440b09418b2aed0e6e040</sys_id>
+        <sys_metadata>60d35ab278baf690b4196c8fb1ecada1</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="Smart Studio Workspace" source="x_dxcis_smart_st_0">3c24ed4a783ab290b4196c8fb1ecad43</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Smart Studio Workspace">3c24ed4a783ab290b4196c8fb1ecad43</sys_scope>
+        <sys_scope_delete display_value="">0dee898794d449228deea52a779ddb44</sys_scope_delete>
+        <sys_update_name>sp_row_60d35ab278baf690b4196c8fb1ecada1</sys_update_name>
+        <sys_update_version display_value="sp_row_60d35ab278baf690b4196c8fb1ecada1">68d35ab278baf690b4196c8fb1ecada4</sys_update_version>
+        <sys_updated_by>aniket.chaudhari</sys_updated_by>
+        <sys_updated_on>2026-02-05 09:44:37</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

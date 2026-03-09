@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="DELETE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl/>
+        <http_method>GET</http_method>
+        <name>GET Policy</name>
+        <operation_script><![CDATA[/**
+ * ServiceNow Scripted REST API Resource Script
+ *
+ * SETUP INSTRUCTIONS:
+ * 1. Navigate to: System Web Services > Scripted REST APIs
+ * 2. Click "New" to create a new API
+ *    - Name: Insurance Policy Servicing API
+ *    - API ID: insurance_policy
+ *    - Base API Path: /api/x_insurance/policy_servicing
+ *
+ * 3. After creating the API, create a new Resource:
+ *    - HTTP Method: GET
+ *    - Name: Get App
+ *    - Relative Path: /
+ *    - Copy the script below into the Script field
+ *
+ * 4. Submit and activate the REST API
+ *
+ * ACCESS:
+ * https://[your-instance].service-now.com/api/x_insurance/policy_servicing/
+ */
+
+(function process(request, response) {
+  // Retrieve the React app HTML from system property
+  var html = gs.getProperty('x_insurance.policy_servicing_app');
+
+  // If property doesn't exist or is empty, return error
+  if (!html) {
+    response.setStatus(500);
+    response.setBody({
+      error: 'Application not configured',
+      message: 'System property x_insurance.policy_servicing_app is not set'
+    });
+    return;
+  }
+
+  // Set response headers
+  response.setContentType('text/html');
+  response.setStatus(200);
+
+  // Write HTML to response
+  response.getStreamWriter().writeString(html);
+
+})(request, response);
+]]></operation_script>
+        <operation_uri>/api/x_dxcis_smart_st_0/insurance_policy</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>stephanie.lyons</sys_created_by>
+        <sys_created_on>2026-02-12 00:12:35</sys_created_on>
+        <sys_id>24f310091dcf3a1062a3fd68f681ce59</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GET Policy</sys_name>
+        <sys_package display_value="Smart Studio Workspace" source="x_dxcis_smart_st_0">3c24ed4a783ab290b4196c8fb1ecad43</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Smart Studio Workspace">3c24ed4a783ab290b4196c8fb1ecad43</sys_scope>
+        <sys_update_name>sys_ws_operation_24f310091dcf3a1062a3fd68f681ce59</sys_update_name>
+        <sys_updated_by>stephanie.lyons</sys_updated_by>
+        <sys_updated_on>2026-02-12 00:12:35</sys_updated_on>
+        <web_service_definition display_value="Insurance Policy Servicing API">3dc3d8c51dcf3a1062a3fd68f681ce4f</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Smart Studio Workspace">3c24ed4a783ab290b4196c8fb1ecad43</application>
+        <file_path/>
+        <instance_id>6158ecff2b0726d0323ef9f66e91bf08</instance_id>
+        <instance_name>nextgenbpmnp1</instance_name>
+        <name>sys_ws_operation_24f310091dcf3a1062a3fd68f681ce59</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ws_operation"&gt;&lt;sys_ws_operation action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;consumes&gt;application/json,application/xml,text/xml&lt;/consumes&gt;&lt;consumes_customized&gt;false&lt;/consumes_customized&gt;&lt;default_operation_uri/&gt;&lt;enforce_acl/&gt;&lt;http_method&gt;GET&lt;/http_method&gt;&lt;name&gt;GET Policy&lt;/name&gt;&lt;operation_script&gt;&lt;![CDATA[/**
+ * ServiceNow Scripted REST API Resource Script
+ *
+ * SETUP INSTRUCTIONS:
+ * 1. Navigate to: System Web Services &gt; Scripted REST APIs
+ * 2. Click "New" to create a new API
+ *    - Name: Insurance Policy Servicing API
+ *    - API ID: insurance_policy
+ *    - Base API Path: /api/x_insurance/policy_servicing
+ *
+ * 3. After creating the API, create a new Resource:
+ *    - HTTP Method: GET
+ *    - Name: Get App
+ *    - Relative Path: /
+ *    - Copy the script below into the Script field
+ *
+ * 4. Submit and activate the REST API
+ *
+ * ACCESS:
+ * https://[your-instance].service-now.com/api/x_insurance/policy_servicing/
+ */
+
+(function process(request, response) {
+  // Retrieve the React app HTML from system property
+  var html = gs.getProperty('x_insurance.policy_servicing_app');
+
+  // If property doesn't exist or is empty, return error
+  if (!html) {
+    response.setStatus(500);
+    response.setBody({
+      error: 'Application not configured',
+      message: 'System property x_insurance.policy_servicing_app is not set'
+    });
+    return;
+  }
+
+  // Set response headers
+  response.setContentType('text/html');
+  response.setStatus(200);
+
+  // Write HTML to response
+  response.getStreamWriter().writeString(html);
+
+})(request, response);
+]]&gt;&lt;/operation_script&gt;&lt;operation_uri&gt;/api/x_dxcis_smart_st_0/insurance_policy&lt;/operation_uri&gt;&lt;produces&gt;application/json,application/xml,text/xml&lt;/produces&gt;&lt;produces_customized&gt;false&lt;/produces_customized&gt;&lt;relative_path&gt;/&lt;/relative_path&gt;&lt;request_example/&gt;&lt;requires_acl_authorization&gt;true&lt;/requires_acl_authorization&gt;&lt;requires_authentication&gt;true&lt;/requires_authentication&gt;&lt;requires_snc_internal_role&gt;true&lt;/requires_snc_internal_role&gt;&lt;short_description/&gt;&lt;sys_class_name&gt;sys_ws_operation&lt;/sys_class_name&gt;&lt;sys_created_by&gt;stephanie.lyons&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-02-12 00:12:35&lt;/sys_created_on&gt;&lt;sys_id&gt;24f310091dcf3a1062a3fd68f681ce59&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;GET Policy&lt;/sys_name&gt;&lt;sys_package display_value="Smart Studio Workspace" source="x_dxcis_smart_st_0"&gt;3c24ed4a783ab290b4196c8fb1ecad43&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Smart Studio Workspace"&gt;3c24ed4a783ab290b4196c8fb1ecad43&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ws_operation_24f310091dcf3a1062a3fd68f681ce59&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;stephanie.lyons&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-02-12 00:12:35&lt;/sys_updated_on&gt;&lt;web_service_definition display_value="Insurance Policy Servicing API"&gt;3dc3d8c51dcf3a1062a3fd68f681ce4f&lt;/web_service_definition&gt;&lt;web_service_version/&gt;&lt;/sys_ws_operation&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>494235716</payload_hash>
+        <record_name>GET Policy</record_name>
+        <reverted_from/>
+        <source>7824ed4a783ab290b4196c8fb1ecadd2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>stephanie.lyons</sys_created_by>
+        <sys_created_on>2026-02-12 00:12:35</sys_created_on>
+        <sys_id>0e6418091dcf3a1062a3fd68f681cee3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19c4f3146400000001</sys_recorded_at>
+        <sys_updated_by>stephanie.lyons</sys_updated_by>
+        <sys_updated_on>2026-02-12 00:12:35</sys_updated_on>
+        <type>Scripted REST Resource</type>
+        <update_guid>8e641809decf3a105e5475af51a1cce2</update_guid>
+        <update_guid_history>8e641809decf3a105e5475af51a1cce2:494235716</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>stephanie.lyons</sys_created_by>
+        <sys_created_on>2026-02-12 00:14:43</sys_created_on>
+        <sys_db_object display_value="" name="sys_ws_operation">sys_ws_operation</sys_db_object>
+        <sys_id>40235b00c48c43c49135625cff960590</sys_id>
+        <sys_metadata>24f310091dcf3a1062a3fd68f681ce59</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GET Policy</sys_name>
+        <sys_package display_value="Smart Studio Workspace" source="x_dxcis_smart_st_0">3c24ed4a783ab290b4196c8fb1ecad43</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Smart Studio Workspace">3c24ed4a783ab290b4196c8fb1ecad43</sys_scope>
+        <sys_scope_delete display_value="">0dee898794d449228deea52a779ddb44</sys_scope_delete>
+        <sys_update_name>sys_ws_operation_24f310091dcf3a1062a3fd68f681ce59</sys_update_name>
+        <sys_update_version display_value="sys_ws_operation_24f310091dcf3a1062a3fd68f681ce59">0e6418091dcf3a1062a3fd68f681cee3</sys_update_version>
+        <sys_updated_by>stephanie.lyons</sys_updated_by>
+        <sys_updated_on>2026-02-12 00:14:43</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

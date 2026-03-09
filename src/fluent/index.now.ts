@@ -1,10 +1,12 @@
-// FSO Insurance Portal APIs
-import './rest-apis/insurance-portal-api.now.ts';
+// Clean FSO Insurance Portal
+// Simple, minimal structure
 
-// FSO Insurance Portal UI Pages
-import './ui-pages/fso-insurance-portal.now.ts';
-import './ui-pages/fso-insurance-simple.now.ts';
-
-// FSO Insurance Portal Security
+// Import basic security
 import './security/roles.now.ts';
 import './security/acls.now.ts';
+
+// Import REST API
+import './api/insurance-api.now.ts';
+
+// Import UI Page
+import './ui/insurance-portal.now.ts';

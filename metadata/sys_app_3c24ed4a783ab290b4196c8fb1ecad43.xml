@@ -16,7 +16,7 @@
         <logo/>
         <menu/>
         <name>Smart Studio Workspace</name>
-        <package_json/>
+        <package_json display_value="x_dxcis_smart_st_0/x-dxcis-smart-studio-workspace/1.0.0/package.json" path="x_dxcis_smart_st_0/x-dxcis-smart-studio-workspace/1.0.0/package.json">x_dxcis_smart_st_0/x-dxcis-smart-studio-workspace/1.0.0/package.json</package_json>
         <private>false</private>
         <restrict_table_access>false</restrict_table_access>
         <runtime_access_tracking>permissive</runtime_access_tracking>

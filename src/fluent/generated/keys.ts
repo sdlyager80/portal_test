@@ -87,7 +87,7 @@ declare global {
                     }
                     bom_json: {
                         table: 'sys_module'
-                        id: '06b21eb79cda4421853059c01671da87'
+                        id: '3acf15942fa546c58b2f87e13b560294'
                     }
                     cf5d60df6cf2fa5062a3bc17f1b0809e: {
                         table: 'sp_instance'
@@ -109,78 +109,75 @@ declare global {
                         id: 'fbc4523678baf690b4196c8fb1ecad37'
                         deleted: true
                     }
+                    'get-insurance-data': {
+                        table: 'sys_ws_operation'
+                        id: '1a9a181adc1746a290e8ccec5bf6eb0c'
+                    }
+                    'insurance-api': {
+                        table: 'sys_ws_definition'
+                        id: '01ccb077c7c7490b8e03a8d0c9948c3c'
+                    }
+                    'insurance-api-acl': {
+                        table: 'sys_security_acl'
+                        id: '2a99e19d36ab4927b841b4012cfca28b'
+                    }
+                    'insurance-portal': {
+                        table: 'sys_ui_page'
+                        id: '237197cc88a74d679247356a97c1b5e8'
+                    }
+                    'insurance-portal-acl': {
+                        table: 'sys_security_acl'
+                        id: '26e40856c6fe44639af66b558b3538ca'
+                    }
                     package_json: {
                         table: 'sys_module'
-                        id: '1eada775aa034cc3bdd08a5b60356fdf'
+                        id: '43065818c82743ca89f7a3927fac7f8c'
+                    }
+                    src_server_insuranceApi_js: {
+                        table: 'sys_module'
+                        id: '7011e1c1a700413ab119624a73cb2960'
+                    }
+                    'x_dxcis_smart_st_0/main': {
+                        table: 'sys_ux_lib_asset'
+                        id: 'fa89dc06e9c54ff198bdf3592bf81dea'
+                    }
+                    'x_dxcis_smart_st_0/main.js.map': {
+                        table: 'sys_ux_lib_asset'
+                        id: '706524c8425e4d6c8f99cc769d4c1c67'
                     }
                 }
                 composite: [
                     {
                         table: 'sys_dictionary'
-                        id: '02492910df8f4fb185eedbff292ed75a'
-                        key: {
-                            name: 'x_dxcis_smart_st_0_request_type'
-                            element: 'description'
-                        }
-                    },
-                    {
-                        table: 'sys_documentation'
-                        id: '0b2f18d1a3c74bbdbe91054802639e8c'
+                        id: '053b7286f53d4ddfb8b16160248b6c18'
                         key: {
                             name: 'x_dxcis_smart_st_0_checklist_item'
-                            element: 'request_type'
-                            language: 'en'
+                            element: 'required'
                         }
                     },
                     {
                         table: 'sys_documentation'
-                        id: '0c189bb278723a90b4196c8fb1ecad5f'
+                        id: '0cef29530df74da29719546fa933264d'
                         key: {
-                            name: 'x_dxcis_smart_st_0_request_type'
-                            element: 'NULL'
-                            language: 'en'
-                        }
-                    },
-                    {
-                        table: 'sys_documentation'
-                        id: '11f2d8ade8c2426bb8f8f47803f3102d'
-                        key: {
-                            name: 'x_dxcis_smart_st_0_request_type'
-                            element: 'order'
-                            language: 'en'
-                        }
-                    },
-                    {
-                        table: 'sys_documentation'
-                        id: '1311f5878c4ffa10b419c663300973e1'
-                        key: {
-                            name: 'var__m_sys_hub_flow_input_db11f5878c4ffa10b419c663300973ce'
-                            element: 'current'
-                            language: 'en'
-                        }
-                    },
-                    {
-                        table: 'sys_documentation'
-                        id: '153b88cd22e14c04b906ccf3e21a035c'
-                        key: {
-                            name: 'x_dxcis_claims_a_0_claims_fnol'
-                            element: 'x_dxcis_smart_st_0_signature_present'
+                            name: 'x_dxcis_smart_st_0_checklist_item'
+                            element: 'required'
                             language: 'en'
                         }
                     },
                     {
                         table: 'sys_dictionary'
-                        id: '154ea88019e84830a99d965bba3566a9'
+                        id: '142615491b4648d6ac3367aafe6ad08d'
                         key: {
                             name: 'x_dxcis_smart_st_0_checklist_item'
                             element: 'description'
                         }
                     },
                     {
-                        table: 'sys_user_role'
-                        id: '1708d7b278723a90b4196c8fb1ecad3a'
+                        table: 'sys_dictionary'
+                        id: '189d9431b15c4997b36466903d47faed'
                         key: {
-                            name: 'x_dxcis_smart_st_0.request_type_user'
+                            name: 'x_dxcis_smart_st_0_request_type'
+                            element: 'NULL'
                         }
                     },
                     {
@@ -192,182 +189,113 @@ declare global {
                         }
                     },
                     {
-                        table: 'sys_documentation'
-                        id: '1f11f5878c4ffa10b419c663300973f4'
-                        key: {
-                            name: 'var__m_sys_hub_flow_input_db11f5878c4ffa10b419c663300973ce'
-                            element: 'table_name'
-                            language: 'en'
-                        }
-                    },
-                    {
                         table: 'sys_dictionary'
-                        id: '211c97a106394c33b8ed8cdf9cd754cb'
+                        id: '1c109959aac0405489ebe441c6532546'
                         key: {
-                            name: 'x_dxcis_claims_a_0_claims_fnol'
-                            element: 'x_dxcis_smart_st_0_signature_present'
+                            name: 'x_dxcis_smart_st_0_request_type'
+                            element: 'active'
                         }
                     },
                     {
                         table: 'sys_user_role'
-                        id: '28c38b7278fef690b4196c8fb1ecadae'
+                        id: '1fd9b3d9213a40769ff6d243f0e941d7'
                         key: {
-                            name: 'x_dxcis_smart_st_0.checklist_item_user'
-                        }
-                    },
-                    {
-                        table: 'sys_security_acl_role'
-                        id: '2f089bb278723a90b4196c8fb1ecad09'
-                        key: {
-                            sys_security_acl: 'eb085bb278723a90b4196c8fb1ecadef'
-                            sys_user_role: {
-                                id: '1708d7b278723a90b4196c8fb1ecad3a'
-                                key: {
-                                    name: 'x_dxcis_smart_st_0.request_type_user'
-                                }
-                            }
+                            name: 'x_dxcis_smart_st_0.insurance_user'
                         }
                     },
                     {
                         table: 'sys_dictionary'
-                        id: '30095c89eb7f400f8e7f34aca7c5c8cd'
+                        id: '23a7e3ae999f43f09738fa25a42cc717'
                         key: {
                             name: 'x_dxcis_smart_st_0_checklist_item'
-                            element: 'required'
+                            element: 'order'
                         }
                     },
                     {
                         table: 'sys_dictionary'
-                        id: '303729de50604575b20f8f09738de92f'
+                        id: '33db6c5b936f459c95b3ed68245689fc'
                         key: {
                             name: 'x_dxcis_smart_st_0_request_type'
                             element: 'name'
                         }
                     },
                     {
-                        table: 'sys_documentation'
-                        id: '3158b6221baf4959b88e166519dc312e'
+                        table: 'sys_dictionary'
+                        id: '36806b9104944e9392d0a00bebe65d38'
+                        key: {
+                            name: 'x_dxcis_claims_a_0_claims_fnol'
+                            element: 'x_dxcis_smart_st_0_signature_present'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '381fdc4c402445fa9454e9b97d7c674f'
                         key: {
                             name: 'x_dxcis_smart_st_0_request_type'
-                            element: 'label'
-                            language: 'en'
+                            element: 'order'
                         }
                     },
                     {
-                        table: 'sys_documentation'
-                        id: '31c7165f8c0b7e10b419c66330097353'
+                        table: 'sys_user_role_contains'
+                        id: '3b3d146b617d40bba60e26ecde1ce7e0'
                         key: {
-                            name: 'var__m_sys_hub_flow_input_6931f9878c4ffa10b419c6633009737d'
-                            element: 'changed_fields'
-                            language: 'en'
-                        }
-                    },
-                    {
-                        table: 'sys_security_acl_role'
-                        id: '34c38f7278fef690b4196c8fb1ecad38'
-                        key: {
-                            sys_security_acl: 'bcc38f7278fef690b4196c8fb1ecad22'
-                            sys_user_role: {
-                                id: '28c38b7278fef690b4196c8fb1ecadae'
+                            role: {
+                                id: 'bbfa9676287340538c3e89cd9fa96593'
                                 key: {
-                                    name: 'x_dxcis_smart_st_0.checklist_item_user'
+                                    name: 'x_dxcis_smart_st_0.insurance_admin'
+                                }
+                            }
+                            contains: {
+                                id: '1fd9b3d9213a40769ff6d243f0e941d7'
+                                key: {
+                                    name: 'x_dxcis_smart_st_0.insurance_user'
                                 }
                             }
                         }
                     },
                     {
-                        table: 'sys_documentation'
-                        id: '34c8eb8a6cb6365062a3bc17f1b080db'
-                        key: {
-                            name: 'var__m_sys_hub_flow_input_a4c8eb8a6cb6365062a3bc17f1b0809f'
-                            element: 'table_name'
-                            language: 'en'
-                        }
-                    },
-                    {
-                        table: 'sys_documentation'
-                        id: '3531f9878c4ffa10b419c66330097394'
-                        key: {
-                            name: 'var__m_sys_hub_flow_input_6931f9878c4ffa10b419c6633009737d'
-                            element: 'table_name'
-                            language: 'en'
-                        }
-                    },
-                    {
-                        table: 'sys_documentation'
-                        id: '3931f9878c4ffa10b419c6633009738b'
-                        key: {
-                            name: 'var__m_sys_hub_flow_input_6931f9878c4ffa10b419c6633009737d'
-                            element: 'current'
-                            language: 'en'
-                        }
-                    },
-                    {
-                        table: 'sys_documentation'
-                        id: '45c38f7278fef690b4196c8fb1ecad9c'
+                        table: 'sys_choice'
+                        id: '414df7dbadca4e32b7828239c01ba3b7'
                         key: {
                             name: 'x_dxcis_smart_st_0_checklist_item'
-                            element: 'NULL'
-                            language: 'en'
-                        }
-                    },
-                    {
-                        table: 'sys_security_acl_role'
-                        id: '49c38f7278fef690b4196c8fb1ecad67'
-                        key: {
-                            sys_security_acl: 'c1c38f7278fef690b4196c8fb1ecad52'
-                            sys_user_role: {
-                                id: '28c38b7278fef690b4196c8fb1ecadae'
-                                key: {
-                                    name: 'x_dxcis_smart_st_0.checklist_item_user'
-                                }
-                            }
+                            element: 'request_type'
+                            value: 'beneficiary_change'
                         }
                     },
                     {
                         table: 'sys_dictionary'
-                        id: '4bc019f0b42e47db8d7e2bc5787da9ca'
-                        key: {
-                            name: 'x_dxcis_smart_st_0_request_type'
-                            element: 'label'
-                        }
-                    },
-                    {
-                        table: 'sys_documentation'
-                        id: '523f668517da4403b367c122d4c49b5f'
-                        key: {
-                            name: 'x_dxcis_smart_st_0_request_type'
-                            element: 'active'
-                            language: 'en'
-                        }
-                    },
-                    {
-                        table: 'sys_documentation'
-                        id: '5311f5878c4ffa10b419c663300973eb'
-                        key: {
-                            name: 'var__m_sys_hub_flow_input_db11f5878c4ffa10b419c663300973ce'
-                            element: 'changed_fields'
-                            language: 'en'
-                        }
-                    },
-                    {
-                        table: 'ua_table_licensing_config'
-                        id: '59c38f7278fef690b4196c8fb1ecadd1'
+                        id: '41a53b251621466aa3b0aa8b171d7bc0'
                         key: {
                             name: 'x_dxcis_smart_st_0_checklist_item'
+                            element: 'request_type'
                         }
                     },
                     {
                         table: 'sys_dictionary'
-                        id: '5b130e8d304b4b26895ea345b058bdc7'
+                        id: '5367419204304159914ced76b46f74b1'
+                        key: {
+                            name: 'x_dxcis_smart_st_0_request_type'
+                            element: 'description'
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: '5d9b8fd068e54a33bc9a0765f7196da6'
                         key: {
                             name: 'x_dxcis_claims_a_0_claims_fnol'
                             element: 'NULL'
                         }
                     },
                     {
+                        table: 'sys_db_object'
+                        id: '6015ccbb70904be2b52d4c2e367461cf'
+                        key: {
+                            name: 'x_dxcis_claims_a_0_claims_fnol'
+                        }
+                    },
+                    {
                         table: 'sys_choice'
-                        id: '611ba6daf9a54da58a77fe57aab897d2'
+                        id: '781054c66d4b4d178e2e81fd3f6af067'
                         key: {
                             name: 'x_dxcis_smart_st_0_checklist_item'
                             element: 'request_type'
@@ -375,236 +303,17 @@ declare global {
                         }
                     },
                     {
-                        table: 'sys_dictionary'
-                        id: '6336cdb5d47e4882801ec7ed39282472'
+                        table: 'sys_documentation'
+                        id: '78d1409fed0a4ec7b61afe62014f1782'
                         key: {
                             name: 'x_dxcis_smart_st_0_request_type'
                             element: 'active'
-                        }
-                    },
-                    {
-                        table: 'sys_documentation'
-                        id: '6359670e6cb6365062a3bc17f1b080f7'
-                        key: {
-                            name: 'var__m_sys_hub_flow_input_eb59670e6cb6365062a3bc17f1b080dc'
-                            element: 'table_name'
-                            language: 'en'
-                        }
-                    },
-                    {
-                        table: 'sys_dictionary'
-                        id: '68327af9d92e41f788d41a68dba9a8db'
-                        key: {
-                            name: 'x_dxcis_smart_st_0_request_type'
-                            element: 'order'
-                        }
-                    },
-                    {
-                        table: 'sys_choice'
-                        id: '688b287b863f42e1aaa139f6e1d061b5'
-                        key: {
-                            name: 'x_dxcis_smart_st_0_checklist_item'
-                            element: 'request_type'
-                            value: 'coverage_modification'
-                        }
-                    },
-                    {
-                        table: 'sys_documentation'
-                        id: '6b59670e6cb6365062a3bc17f1b080fb'
-                        key: {
-                            name: 'var__m_sys_hub_flow_input_eb59670e6cb6365062a3bc17f1b080dc'
-                            element: 'current'
-                            language: 'en'
-                        }
-                    },
-                    {
-                        table: 'sys_ui_list_element'
-                        id: '702943fa78fef690b4196c8fb1ecad89'
-                        key: {
-                            list_id: {
-                                id: 'b82943fa78fef690b4196c8fb1ecad86'
-                                key: {
-                                    name: 'x_dxcis_smart_st_0_checklist_item'
-                                    view: 'Default view'
-                                    sys_domain: 'global'
-                                    element: 'NULL'
-                                    relationship: 'NULL'
-                                    parent: 'NULL'
-                                }
-                            }
-                            element: 'required'
-                        }
-                    },
-                    {
-                        table: 'sys_security_acl_role'
-                        id: '70c38f7278fef690b4196c8fb1ecad19'
-                        key: {
-                            sys_security_acl: 'b4c34f7278fef690b4196c8fb1ecadfe'
-                            sys_user_role: {
-                                id: '28c38b7278fef690b4196c8fb1ecadae'
-                                key: {
-                                    name: 'x_dxcis_smart_st_0.checklist_item_user'
-                                }
-                            }
-                        }
-                    },
-                    {
-                        table: 'sys_ui_list_element'
-                        id: '742943fa78fef690b4196c8fb1ecad88'
-                        key: {
-                            list_id: {
-                                id: 'b82943fa78fef690b4196c8fb1ecad86'
-                                key: {
-                                    name: 'x_dxcis_smart_st_0_checklist_item'
-                                    view: 'Default view'
-                                    sys_domain: 'global'
-                                    element: 'NULL'
-                                    relationship: 'NULL'
-                                    parent: 'NULL'
-                                }
-                            }
-                            element: 'order'
-                        }
-                    },
-                    {
-                        table: 'sys_ui_list_element'
-                        id: '7889177678723a90b4196c8fb1ecad4a'
-                        key: {
-                            list_id: {
-                                id: 'e489177678723a90b4196c8fb1ecad47'
-                                key: {
-                                    name: 'x_dxcis_smart_st_0_request_type'
-                                    view: 'Default view'
-                                    sys_domain: 'global'
-                                    element: 'NULL'
-                                    relationship: 'NULL'
-                                    parent: 'NULL'
-                                }
-                            }
-                            element: 'label'
-                        }
-                    },
-                    {
-                        table: 'sys_ui_list_element'
-                        id: '7c89177678723a90b4196c8fb1ecad49'
-                        key: {
-                            list_id: {
-                                id: 'e489177678723a90b4196c8fb1ecad47'
-                                key: {
-                                    name: 'x_dxcis_smart_st_0_request_type'
-                                    view: 'Default view'
-                                    sys_domain: 'global'
-                                    element: 'NULL'
-                                    relationship: 'NULL'
-                                    parent: 'NULL'
-                                }
-                            }
-                            element: 'active'
-                        }
-                    },
-                    {
-                        table: 'sys_user_role'
-                        id: '8124ed4a783ab290b4196c8fb1ecadf6'
-                        key: {
-                            name: 'x_dxcis_smart_st_0.user'
-                        }
-                    },
-                    {
-                        table: 'sys_documentation'
-                        id: '85c7d25f8c0b7e10b419c66330097387'
-                        key: {
-                            name: 'var__m_sys_hub_flow_input_a4c8eb8a6cb6365062a3bc17f1b0809f'
-                            element: 'changed_fields'
                             language: 'en'
                         }
                     },
                     {
                         table: 'sys_choice'
-                        id: '8ef5b900113e468aa69a0e6e4fab1d5d'
-                        key: {
-                            name: 'x_dxcis_smart_st_0_checklist_item'
-                            element: 'request_type'
-                            value: 'address_change'
-                        }
-                    },
-                    {
-                        table: 'sys_dictionary'
-                        id: '9aa72841542f45709243a19449dd0366'
-                        key: {
-                            name: 'x_dxcis_smart_st_0_checklist_item'
-                            element: 'request_type'
-                        }
-                    },
-                    {
-                        table: 'sys_dictionary'
-                        id: 'a2c49011252840fe8936f2df6fcaf80a'
-                        key: {
-                            name: 'x_dxcis_smart_st_0_checklist_item'
-                            element: 'order'
-                        }
-                    },
-                    {
-                        table: 'sys_documentation'
-                        id: 'a718ada70a17410ea46d8b7cc7c88c4f'
-                        key: {
-                            name: 'x_dxcis_smart_st_0_checklist_item'
-                            element: 'order'
-                            language: 'en'
-                        }
-                    },
-                    {
-                        table: 'sys_documentation'
-                        id: 'a84f22eeb303478ebf0174f09c9d363c'
-                        key: {
-                            name: 'x_dxcis_smart_st_0_request_type'
-                            element: 'description'
-                            language: 'en'
-                        }
-                    },
-                    {
-                        table: 'sys_dictionary'
-                        id: 'adbd3d8afee54cf8a0ba308f8138072e'
-                        key: {
-                            name: 'x_dxcis_smart_st_0_request_type'
-                            element: 'NULL'
-                        }
-                    },
-                    {
-                        table: 'sys_db_object'
-                        id: 'afcbac173bc04ce1a0436444c0e7dd9b'
-                        key: {
-                            name: 'x_dxcis_smart_st_0_checklist_item'
-                        }
-                    },
-                    {
-                        table: 'sys_documentation'
-                        id: 'b7f136551a824909acd868148352ad85'
-                        key: {
-                            name: 'x_dxcis_smart_st_0_request_type'
-                            element: 'name'
-                            language: 'en'
-                        }
-                    },
-                    {
-                        table: 'sys_ui_list'
-                        id: 'b82943fa78fef690b4196c8fb1ecad86'
-                        key: {
-                            name: 'x_dxcis_smart_st_0_checklist_item'
-                            view: {
-                                id: 'Default view'
-                                key: {
-                                    name: 'NULL'
-                                }
-                            }
-                            sys_domain: 'global'
-                            element: 'NULL'
-                            relationship: 'NULL'
-                            parent: 'NULL'
-                        }
-                    },
-                    {
-                        table: 'sys_choice'
-                        id: 'ba062769340d4b8d8833adfc612b28d1'
+                        id: '82d3836c14434830a63d4521549e9b92'
                         key: {
                             name: 'x_dxcis_smart_st_0_checklist_item'
                             element: 'request_type'
@@ -613,61 +322,42 @@ declare global {
                     },
                     {
                         table: 'sys_documentation'
-                        id: 'bcc8eb8a6cb6365062a3bc17f1b080d5'
+                        id: '83ff2399350940fab575dc9758103513'
                         key: {
-                            name: 'var__m_sys_hub_flow_input_a4c8eb8a6cb6365062a3bc17f1b0809f'
-                            element: 'current'
+                            name: 'x_dxcis_smart_st_0_checklist_item'
+                            element: 'request_type'
                             language: 'en'
                         }
                     },
                     {
-                        table: 'sys_db_object'
-                        id: 'c27a4fb9bfc44892ae5357cc7fdc2b9b'
+                        table: 'sys_documentation'
+                        id: '871d35679c484d4a9edf610eb8af2952'
                         key: {
-                            name: 'x_dxcis_claims_a_0_claims_fnol'
+                            name: 'x_dxcis_smart_st_0_request_type'
+                            element: 'label'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_choice'
+                        id: '8a842635f7894034b21f639217e71702'
+                        key: {
+                            name: 'x_dxcis_smart_st_0_checklist_item'
+                            element: 'request_type'
+                            value: 'address_change'
                         }
                     },
                     {
                         table: 'sys_dictionary'
-                        id: 'c3535d50e4314ee8a0421f5aabd5e30a'
+                        id: '8f5f3974e0a1405daa8aa547d1b06555'
                         key: {
                             name: 'x_dxcis_smart_st_0_checklist_item'
                             element: 'NULL'
                         }
                     },
                     {
-                        table: 'ua_table_licensing_config'
-                        id: 'c4189bb278723a90b4196c8fb1ecad88'
-                        key: {
-                            name: 'x_dxcis_smart_st_0_request_type'
-                        }
-                    },
-                    {
-                        table: 'sys_user_role'
-                        id: 'c524ed4a783ab290b4196c8fb1ecaddb'
-                        key: {
-                            name: 'x_dxcis_smart_st_0.admin'
-                        }
-                    },
-                    {
                         table: 'sys_choice'
-                        id: 'ca463fc317134f748e9636dd10503978'
-                        key: {
-                            name: 'x_dxcis_smart_st_0_checklist_item'
-                            element: 'request_type'
-                            value: 'beneficiary_change'
-                        }
-                    },
-                    {
-                        table: 'sys_db_object'
-                        id: 'd39a59b49f344c7285ed68584f0d3ffe'
-                        key: {
-                            name: 'x_dxcis_smart_st_0_request_type'
-                        }
-                    },
-                    {
-                        table: 'sys_choice'
-                        id: 'dc0925e966a94266944fc41a9f43de72'
+                        id: '8fe71c65371041b998715df23d77533a'
                         key: {
                             name: 'x_dxcis_smart_st_0_checklist_item'
                             element: 'request_type'
@@ -675,189 +365,121 @@ declare global {
                         }
                     },
                     {
-                        table: 'sys_ui_list'
-                        id: 'e489177678723a90b4196c8fb1ecad47'
+                        table: 'sys_documentation'
+                        id: 'a70043b051b14e128efa88b04e84b17e'
                         key: {
                             name: 'x_dxcis_smart_st_0_request_type'
-                            view: {
-                                id: 'Default view'
-                                key: {
-                                    name: 'NULL'
-                                }
-                            }
-                            sys_domain: 'global'
-                            element: 'NULL'
-                            relationship: 'NULL'
-                            parent: 'NULL'
-                        }
-                    },
-                    {
-                        table: 'sys_documentation'
-                        id: 'ec429470ffce4109a74fa8a6269b0908'
-                        key: {
-                            name: 'x_dxcis_smart_st_0_checklist_item'
-                            element: 'description'
-                            language: 'en'
-                        }
-                    },
-                    {
-                        table: 'sys_documentation'
-                        id: 'ef59a70e6cb6365062a3bc17f1b08000'
-                        key: {
-                            name: 'var__m_sys_hub_flow_input_eb59670e6cb6365062a3bc17f1b080dc'
-                            element: 'changed_fields'
-                            language: 'en'
-                        }
-                    },
-                    {
-                        table: 'sys_documentation'
-                        id: 'f005a0f6842040a29374d4530e541b16'
-                        key: {
-                            name: 'x_dxcis_smart_st_0_checklist_item'
-                            element: 'required'
-                            language: 'en'
-                        }
-                    },
-                    {
-                        table: 'sys_ui_list_element'
-                        id: 'f089177678723a90b4196c8fb1ecad49'
-                        key: {
-                            list_id: {
-                                id: 'e489177678723a90b4196c8fb1ecad47'
-                                key: {
-                                    name: 'x_dxcis_smart_st_0_request_type'
-                                    view: 'Default view'
-                                    sys_domain: 'global'
-                                    element: 'NULL'
-                                    relationship: 'NULL'
-                                    parent: 'NULL'
-                                }
-                            }
-                            element: 'name'
-                        }
-                    },
-                    {
-                        table: 'sys_ui_list_element'
-                        id: 'f089177678723a90b4196c8fb1ecad4a'
-                        key: {
-                            list_id: {
-                                id: 'e489177678723a90b4196c8fb1ecad47'
-                                key: {
-                                    name: 'x_dxcis_smart_st_0_request_type'
-                                    view: 'Default view'
-                                    sys_domain: 'global'
-                                    element: 'NULL'
-                                    relationship: 'NULL'
-                                    parent: 'NULL'
-                                }
-                            }
-                            element: 'description'
-                        }
-                    },
-                    {
-                        table: 'sys_security_acl_role'
-                        id: 'f3089bb278723a90b4196c8fb1ecad2c'
-                        key: {
-                            sys_security_acl: 'bb089bb278723a90b4196c8fb1ecad23'
-                            sys_user_role: {
-                                id: '1708d7b278723a90b4196c8fb1ecad3a'
-                                key: {
-                                    name: 'x_dxcis_smart_st_0.request_type_user'
-                                }
-                            }
-                        }
-                    },
-                    {
-                        table: 'sys_ui_list_element'
-                        id: 'f82943fa78fef690b4196c8fb1ecad87'
-                        key: {
-                            list_id: {
-                                id: 'b82943fa78fef690b4196c8fb1ecad86'
-                                key: {
-                                    name: 'x_dxcis_smart_st_0_checklist_item'
-                                    view: 'Default view'
-                                    sys_domain: 'global'
-                                    element: 'NULL'
-                                    relationship: 'NULL'
-                                    parent: 'NULL'
-                                }
-                            }
-                            element: 'description'
-                        }
-                    },
-                    {
-                        table: 'sys_ui_list_element'
-                        id: 'f82943fa78fef690b4196c8fb1ecad88'
-                        key: {
-                            list_id: {
-                                id: 'b82943fa78fef690b4196c8fb1ecad86'
-                                key: {
-                                    name: 'x_dxcis_smart_st_0_checklist_item'
-                                    view: 'Default view'
-                                    sys_domain: 'global'
-                                    element: 'NULL'
-                                    relationship: 'NULL'
-                                    parent: 'NULL'
-                                }
-                            }
-                            element: 'request_type'
-                        }
-                    },
-                    {
-                        table: 'sys_security_acl_role'
-                        id: 'f8c38f7278fef690b4196c8fb1ecad49'
-                        key: {
-                            sys_security_acl: '3cc38f7278fef690b4196c8fb1ecad40'
-                            sys_user_role: {
-                                id: '28c38b7278fef690b4196c8fb1ecadae'
-                                key: {
-                                    name: 'x_dxcis_smart_st_0.checklist_item_user'
-                                }
-                            }
-                        }
-                    },
-                    {
-                        table: 'sys_security_acl_role'
-                        id: 'fb089bb278723a90b4196c8fb1ecad1b'
-                        key: {
-                            sys_security_acl: 'b3089bb278723a90b4196c8fb1ecad13'
-                            sys_user_role: {
-                                id: '1708d7b278723a90b4196c8fb1ecad3a'
-                                key: {
-                                    name: 'x_dxcis_smart_st_0.request_type_user'
-                                }
-                            }
-                        }
-                    },
-                    {
-                        table: 'sys_security_acl_role'
-                        id: 'fb089bb278723a90b4196c8fb1ecad3c'
-                        key: {
-                            sys_security_acl: 'b3089bb278723a90b4196c8fb1ecad34'
-                            sys_user_role: {
-                                id: '1708d7b278723a90b4196c8fb1ecad3a'
-                                key: {
-                                    name: 'x_dxcis_smart_st_0.request_type_user'
-                                }
-                            }
-                        }
-                    },
-                    {
-                        table: 'sys_ui_list_element'
-                        id: 'fc89177678723a90b4196c8fb1ecad4a'
-                        key: {
-                            list_id: {
-                                id: 'e489177678723a90b4196c8fb1ecad47'
-                                key: {
-                                    name: 'x_dxcis_smart_st_0_request_type'
-                                    view: 'Default view'
-                                    sys_domain: 'global'
-                                    element: 'NULL'
-                                    relationship: 'NULL'
-                                    parent: 'NULL'
-                                }
-                            }
                             element: 'order'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'a9f947f0d746491aad344d4c0e562052'
+                        key: {
+                            name: 'x_dxcis_smart_st_0_checklist_item'
+                            element: 'description'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'aa9758a2db354d0cb78748f0208bf0af'
+                        key: {
+                            name: 'x_dxcis_smart_st_0_request_type'
+                            element: 'name'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_db_object'
+                        id: 'b6e22e72d97d4eba9b4fbfbee321fd6e'
+                        key: {
+                            name: 'x_dxcis_smart_st_0_request_type'
+                        }
+                    },
+                    {
+                        table: 'sys_user_role'
+                        id: 'bbfa9676287340538c3e89cd9fa96593'
+                        key: {
+                            name: 'x_dxcis_smart_st_0.insurance_admin'
+                        }
+                    },
+                    {
+                        table: 'sys_choice'
+                        id: 'bc9e85009d5a47e48d90895a15326df4'
+                        key: {
+                            name: 'x_dxcis_smart_st_0_checklist_item'
+                            element: 'request_type'
+                            value: 'coverage_modification'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'c101247d530e4e12a4be7c25979db0f2'
+                        key: {
+                            name: 'x_dxcis_smart_st_0_checklist_item'
+                            element: 'order'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'cf8f065f81d84ab9b1469fca06aeaa57'
+                        key: {
+                            sys_security_acl: '2a99e19d36ab4927b841b4012cfca28b'
+                            sys_user_role: {
+                                id: '1fd9b3d9213a40769ff6d243f0e941d7'
+                                key: {
+                                    name: 'x_dxcis_smart_st_0.insurance_user'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_dictionary'
+                        id: 'e0712ea83ddd4d3dafa4fe8fdadfe3b0'
+                        key: {
+                            name: 'x_dxcis_smart_st_0_request_type'
+                            element: 'label'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'e2e004ae980542d9933acabe2d0a21ce'
+                        key: {
+                            name: 'x_dxcis_smart_st_0_request_type'
+                            element: 'description'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_documentation'
+                        id: 'e3241390043e4a5f93c6711b84e5c542'
+                        key: {
+                            name: 'x_dxcis_claims_a_0_claims_fnol'
+                            element: 'x_dxcis_smart_st_0_signature_present'
+                            language: 'en'
+                        }
+                    },
+                    {
+                        table: 'sys_security_acl_role'
+                        id: 'f03dbfd169774c789d3acba4b9d5389c'
+                        key: {
+                            sys_security_acl: '26e40856c6fe44639af66b558b3538ca'
+                            sys_user_role: {
+                                id: '1fd9b3d9213a40769ff6d243f0e941d7'
+                                key: {
+                                    name: 'x_dxcis_smart_st_0.insurance_user'
+                                }
+                            }
+                        }
+                    },
+                    {
+                        table: 'sys_db_object'
+                        id: 'f518a254c7f243558855ea1a56b4c608'
+                        key: {
+                            name: 'x_dxcis_smart_st_0_checklist_item'
                         }
                     },
                 ]

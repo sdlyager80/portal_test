@@ -1,14 +1,3 @@
-// Utility functions for handling ServiceNow field data
-export const display = (field) => {
-  if (typeof field === 'string') {
-    return field;
-  }
-  return field?.display_value || '';
-};
-
-export const value = (field) => {
-  if (typeof field === 'string') {
-    return field;
-  }
-  return field?.value || '';
-};
+// Essential field utility functions for ServiceNow API responses
+export const display = (field) => field?.display_value || '';
+export const value = (field) => field?.value || '';

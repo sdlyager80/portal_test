@@ -1,107 +1,139 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import React, { useState } from 'react';
+import {
+  AppBar,
+  Box,
+  Button,
+  Card,
+  CardContent,
+  Container,
+  CssBaseline,
+  Grid,
+  ThemeProvider,
+  Toolbar,
+  Typography,
+  createTheme,
+} from '@mui/material';
+
+// Simple theme
+const theme = createTheme({
+  palette: {
+    primary: { main: '#1B1F3A' },
+    secondary: { main: '#00AEEF' },
+    background: { default: '#f4f5f7' },
+  },
+});
 
 export default function App() {
-    const [portalData, setPortalData] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+  const [currentView, setCurrentView] = useState('dashboard');
 
-    useEffect(() => {
-        // Test our insurance API with fallback
-        fetch('/api/x_dxcis_smart_st_0/insurance_portal/data', {
-            headers: {
-                'Accept': 'application/json',
-                'X-UserToken': window.g_ck
-            }
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            setPortalData(data.result);
-            setLoading(false);
-        })
-        .catch(err => {
-            console.error('API Error:', err);
-            // Fallback data for demo purposes
-            setPortalData({
-                status: 'active',
-                message: 'Insurance Portal is ready (demo mode)',
-                timestamp: new Date().toLocaleString()
-            });
-            setLoading(false);
-        });
-    }, []);
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" sx={{ flexGrow: 1 }}>
+            Smart Studio Workspace - FSO Insurance Portal
+          </Typography>
+        </Toolbar>
+      </AppBar>
 
-    if (loading) {
-        return (
-            <div className="portal-container">
-                <div className="loading">Loading FSO Insurance Portal...</div>
-            </div>
-        );
-    }
+      <Container maxWidth="lg" sx={{ mt: 4 }}>
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={4}>
+            <Card>
+              <CardContent>
+                <Typography variant="h6" gutterBottom>
+                  Dashboard
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  View your insurance dashboard and recent activity
+                </Typography>
+                <Button 
+                  variant="contained" 
+                  sx={{ mt: 2 }}
+                  onClick={() => setCurrentView('dashboard')}
+                >
+                  View Dashboard
+                </Button>
+              </CardContent>
+            </Card>
+          </Grid>
 
-    if (error) {
-        return (
-            <div className="portal-container">
-                <div className="error">
-                    <h2>Error Loading Portal</h2>
-                    <p>{error}</p>
-                </div>
-            </div>
-        );
-    }
+          <Grid item xs={12} md={4}>
+            <Card>
+              <CardContent>
+                <Typography variant="h6" gutterBottom>
+                  Policy Servicing
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Manage and service insurance policies
+                </Typography>
+                <Button 
+                  variant="contained" 
+                  sx={{ mt: 2 }}
+                  onClick={() => setCurrentView('policy')}
+                >
+                  Manage Policies
+                </Button>
+              </CardContent>
+            </Card>
+          </Grid>
 
-    return (
-        <div className="portal-container">
-            <header className="portal-header">
-                <h1>🏢 FSO Insurance Portal</h1>
-                <p>Smart Studio Workspace</p>
-            </header>
+          <Grid item xs={12} md={4}>
+            <Card>
+              <CardContent>
+                <Typography variant="h6" gutterBottom>
+                  Billing & Payment
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Handle billing tasks and payment processing
+                </Typography>
+                <Button 
+                  variant="contained" 
+                  sx={{ mt: 2 }}
+                  onClick={() => setCurrentView('billing')}
+                >
+                  Billing Tasks
+                </Button>
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
 
-            <div className="portal-content">
-                <div className="welcome-card">
-                    <h2>Welcome to Your Insurance Portal</h2>
-                    <div className="status-info">
-                        <p><strong>Status:</strong> <span className="status-active">{portalData?.status}</span></p>
-                        <p><strong>Message:</strong> {portalData?.message}</p>
-                        <p><strong>Connected:</strong> {portalData?.timestamp}</p>
-                    </div>
-                </div>
+        <Box sx={{ mt: 4 }}>
+          <Typography variant="h4" gutterBottom>
+            Current View: {currentView}
+          </Typography>
+          
+          {currentView === 'dashboard' && (
+            <Box>
+              <Typography variant="body1">
+                Welcome to your insurance dashboard. Here you can view recent activity, 
+                pending tasks, and quick access to common functions.
+              </Typography>
+            </Box>
+          )}
 
-                <div className="portal-sections">
-                    <div className="section-card">
-                        <h3>🔐 Policy Management</h3>
-                        <p>View and manage your insurance policies</p>
-                        <button className="portal-button">Access Policies</button>
-                    </div>
+          {currentView === 'policy' && (
+            <Box>
+              <Typography variant="body1">
+                Policy servicing section. Manage insurance policies, renewals, 
+                and policy-related tasks.
+              </Typography>
+            </Box>
+          )}
 
-                    <div className="section-card">
-                        <h3>💳 Claims $[AMP] Billing</h3>
-                        <p>File claims and manage billing information</p>
-                        <button className="portal-button">Manage Claims</button>
-                    </div>
-
-                    <div className="section-card">
-                        <h3>📊 Dashboard</h3>
-                        <p>View your insurance dashboard and reports</p>
-                        <button className="portal-button">View Dashboard</button>
-                    </div>
-
-                    <div className="section-card">
-                        <h3>🛠️ Service Requests</h3>
-                        <p>Submit and track service requests</p>
-                        <button className="portal-button">Service Center</button>
-                    </div>
-                </div>
-            </div>
-
-            <footer className="portal-footer">
-                <p>FSO Insurance Portal - Powered by ServiceNow</p>
-            </footer>
-        </div>
-    );
+          {currentView === 'billing' && (
+            <Box>
+              <Typography variant="body1">
+                Billing and payment management. Process payments, handle billing inquiries, 
+                and manage payment schedules.
+              </Typography>
+            </Box>
+          )}
+        </Box>
+      </Container>
+    </ThemeProvider>
+  );
 }

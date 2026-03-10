@@ -47,7 +47,15 @@ const COLUMNS = [
   { field: 'sys_created_on', headerName: 'Created',     valueGetter: (r) => display(r.sys_created_on) },
 ];
 
+const POLICY_TASK_TYPES = [
+  'Beneficiary Change',
+  'Address Change',
+  'Owner Change',
+  'Returned Mail',
+];
+
 const EMPTY_FORM = {
+  task_type: '',
   short_description: '',
   description: '',
   consumer: '',
@@ -100,6 +108,15 @@ export default function PolicyServicing({ service }) {
   const setField = (field) => (e) =>
     setFormData((prev) => ({ ...prev, [field]: e.target.value }));
 
+  const setTaskType = (e) => {
+    const type = e.target.value;
+    setFormData((prev) => ({
+      ...prev,
+      task_type: type,
+      short_description: type,
+    }));
+  };
+
   return (
     <Box>
       <TaskTable
@@ -110,15 +127,25 @@ export default function PolicyServicing({ service }) {
         error={error}
         onRefresh={loadData}
         onCreateClick={() => setDialogOpen(true)}
-        createLabel="New Policy Task"
-        searchPlaceholder="Search policies…"
-        emptyMessage="No policy tasks found"
+        createLabel="New Servicing Request"
+        searchPlaceholder="Search policy tasks…"
+        emptyMessage="No policy servicing tasks found"
       />
 
       <Dialog open={dialogOpen} onClose={() => setDialogOpen(false)} maxWidth="sm" fullWidth>
-        <DialogTitle>Create Policy Task</DialogTitle>
+        <DialogTitle>New Policy Servicing Request</DialogTitle>
         <DialogContent>
           <Grid container spacing={2} sx={{ mt: 0.5 }}>
+            <Grid item xs={12}>
+              <FormControl fullWidth required>
+                <InputLabel>Task Type</InputLabel>
+                <Select value={formData.task_type} onChange={setTaskType} label="Task Type">
+                  {POLICY_TASK_TYPES.map((t) => (
+                    <MenuItem key={t} value={t}>{t}</MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            </Grid>
             <Grid item xs={12}>
               <TextField
                 fullWidth required
@@ -174,7 +201,7 @@ export default function PolicyServicing({ service }) {
           <Button
             variant="contained"
             onClick={handleSubmit}
-            disabled={!formData.short_description.trim() || submitting}
+            disabled={!formData.task_type || !formData.short_description.trim() || submitting}
           >
             Create Task
           </Button>

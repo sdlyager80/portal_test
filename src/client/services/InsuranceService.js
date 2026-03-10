@@ -50,22 +50,42 @@ export class InsuranceService {
           {
             sys_id: 'pol1',
             number: 'POL-001',
-            short_description: 'Auto insurance policy renewal',
+            short_description: 'Beneficiary Change',
             consumer: 'John Smith',
-            priority: '2',
-            state: 'Active',
+            priority: '3',
+            state: 'Open',
             assigned_to: 'Agent Smith',
             sys_created_on: '2024-01-15 10:00:00'
           },
           {
             sys_id: 'pol2',
             number: 'POL-002',
-            short_description: 'Home insurance claim review',
+            short_description: 'Address Change',
             consumer: 'Jane Doe',
-            priority: '1',
+            priority: '4',
             state: 'In Progress',
             assigned_to: 'Agent Johnson',
             sys_created_on: '2024-01-14 14:30:00'
+          },
+          {
+            sys_id: 'pol3',
+            number: 'POL-003',
+            short_description: 'Owner Change',
+            consumer: 'Robert Williams',
+            priority: '2',
+            state: 'Open',
+            assigned_to: 'Agent Davis',
+            sys_created_on: '2024-01-13 09:15:00'
+          },
+          {
+            sys_id: 'pol4',
+            number: 'POL-004',
+            short_description: 'Returned Mail',
+            consumer: 'Susan Miller',
+            priority: '3',
+            state: 'New',
+            assigned_to: 'Agent Brown',
+            sys_created_on: '2024-01-12 16:00:00'
           }
         ]
       };
@@ -121,10 +141,12 @@ export class InsuranceService {
       // Fallback demo data
       return {
         result: [
-          { sys_id: 'sd1', name: 'Policy Review', category: 'policy' },
-          { sys_id: 'sd2', name: 'Policy Update', category: 'policy' },
-          { sys_id: 'sd3', name: 'Payment Setup', category: 'billing' },
-          { sys_id: 'sd4', name: 'Billing Inquiry', category: 'billing' }
+          { sys_id: 'sd1', name: 'Beneficiary Change', category: 'policy' },
+          { sys_id: 'sd2', name: 'Address Change',     category: 'policy' },
+          { sys_id: 'sd3', name: 'Owner Change',       category: 'policy' },
+          { sys_id: 'sd4', name: 'Returned Mail',      category: 'policy' },
+          { sys_id: 'sd5', name: 'Payment Setup',      category: 'billing' },
+          { sys_id: 'sd6', name: 'Billing Inquiry',    category: 'billing' }
         ]
       };
     }

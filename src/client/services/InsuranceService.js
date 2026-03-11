@@ -222,6 +222,103 @@ export class InsuranceService {
   }
 
   /**
+   * Get policy data and DocIntel-extracted beneficiary info for Beneficiary Change flow
+   */
+  async getBeneChangePolicyData(policyNumber) {
+    try {
+      const response = await this.request(`/policies/${encodeURIComponent(policyNumber)}/bene-change`);
+      return response;
+    } catch (error) {
+      // Demo mock — simulates IDP extraction output for a life policy
+      return {
+        result: {
+          policy: {
+            policyNumber:   policyNumber || 'LF-2019-00847312',
+            status:         'Active',
+            productType:    'Whole Life',
+            issueDate:      '03/15/2019',
+            insuredName:    'Margaret R. Thompson',
+            insuredDOB:     '07/22/1968',
+            ownerName:      'Margaret R. Thompson',
+            ownerTaxId:     'XXX-XX-4471',
+            ownerPhone:     '(704) 555-0192',
+            ownerState:     'NC',
+            married:        true,
+            communityPropertyState: false,
+          },
+          flags: {
+            nonNaturalOwner:    false,
+            irrevocableBeneficiary: false,
+            assignee:           false,
+            pendingOwnerChange: false,
+            suspended:          false,
+            restricted:         false,
+            complaintDOI:       false,
+            vipLegal:           false,
+            poa:                false,
+            deathPending:       false,
+          },
+          idpConfidence: 96,
+          extractedBeneficiaries: {
+            primary1: {
+              name:         'David A. Thompson',
+              percentage:   '70',
+              dob:          '06/14/1966',
+              ssn:          '',
+              phone:        '(704) 555-0138',
+              address:      '4821 Pinecrest Drive',
+              city:         'Charlotte',
+              state:        'NC',
+              zip:          '28210',
+              relationship: 'Spouse',
+              irrevocable:  false,
+            },
+            primary2: {
+              name:         'Claire L. Thompson',
+              percentage:   '30',
+              dob:          '04/03/1995',
+              ssn:          '',
+              phone:        '',
+              address:      '4821 Pinecrest Drive',
+              city:         'Charlotte',
+              state:        'NC',
+              zip:          '28210',
+              relationship: 'Child',
+              irrevocable:  false,
+            },
+            contingent1: {
+              name:         '',
+              percentage:   '',
+              dob:          '',
+              ssn:          '',
+              phone:        '',
+              address:      '',
+              city:         '',
+              state:        '',
+              zip:          '',
+              relationship: '',
+              irrevocable:  false,
+            },
+            contingent2: {
+              name:         '',
+              percentage:   '',
+              dob:          '',
+              ssn:          '',
+              phone:        '',
+              address:      '',
+              city:         '',
+              state:        '',
+              zip:          '',
+              relationship: '',
+              irrevocable:  false,
+            },
+          },
+        },
+      };
+    }
+  }
+
+  /**
    * Submit a service request
    */
   async submitServiceRequest(requestData) {

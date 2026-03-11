@@ -15,6 +15,7 @@ import {
   TextField,
 } from '@mui/material';
 import TaskTable from './TaskTable.jsx';
+import BeneficiaryChangeForm from './BeneficiaryChangeForm.jsx';
 import { display, value } from '../utils/fields.js';
 
 // Priority config — single source of truth
@@ -69,6 +70,7 @@ export default function PolicyServicing({ service }) {
   const [loading,            setLoading]            = useState(true);
   const [error,              setError]              = useState(null);
   const [dialogOpen,         setDialogOpen]         = useState(false);
+  const [beneChangeOpen,     setBeneChangeOpen]     = useState(false);
   const [formData,           setFormData]           = useState(EMPTY_FORM);
   const [submitting,         setSubmitting]         = useState(false);
 
@@ -110,11 +112,21 @@ export default function PolicyServicing({ service }) {
 
   const setTaskType = (e) => {
     const type = e.target.value;
+    if (type === 'Beneficiary Change') {
+      setDialogOpen(false);
+      setBeneChangeOpen(true);
+      return;
+    }
     setFormData((prev) => ({
       ...prev,
       task_type: type,
       short_description: type,
     }));
+  };
+
+  const handleNewRequest = () => {
+    setFormData(EMPTY_FORM);
+    setDialogOpen(true);
   };
 
   return (
@@ -126,7 +138,7 @@ export default function PolicyServicing({ service }) {
         loading={loading}
         error={error}
         onRefresh={loadData}
-        onCreateClick={() => setDialogOpen(true)}
+        onCreateClick={handleNewRequest}
         createLabel="New Servicing Request"
         searchPlaceholder="Search policy tasks…"
         emptyMessage="No policy servicing tasks found"
@@ -207,6 +219,13 @@ export default function PolicyServicing({ service }) {
           </Button>
         </DialogActions>
       </Dialog>
+
+      <BeneficiaryChangeForm
+        open={beneChangeOpen}
+        onClose={() => setBeneChangeOpen(false)}
+        onSuccess={() => { setBeneChangeOpen(false); loadData(); }}
+        service={service}
+      />
     </Box>
   );
 }
